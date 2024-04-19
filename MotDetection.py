@@ -2,15 +2,15 @@ import cv2
 import os
 import time
 
-# Definir la ruta de la carpeta de destino para los videos
+# Definir la ruta destino para los videos
 carpeta_destino = r"C:\Users\Silvina\Practik\Deteccion mov\grabaciones"
 
-# Verificar si la carpeta de destino existe, si no, crearla
+# Verificar si la carpeta destino existe, si no, crearla
 if not os.path.exists(carpeta_destino):
     os.makedirs(carpeta_destino)
 
 # Capturar video
-cap = cv2.VideoCapture(0)  # Usar 0 para la cámara predeterminada
+cap = cv2.VideoCapture(0)  # 0 para predeterminada
 
 # Inicializar el detector de movimiento
 detector = cv2.createBackgroundSubtractorMOG2()
