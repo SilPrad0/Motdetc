@@ -15,7 +15,7 @@ def verificar_o_crear_carpeta(carpeta):
 
 
 def iniciar_captura_video():
-    return cv2.VideoCapture(0)  # 0 para cámara predeterminada
+    return cv2.VideoCapture(0)  # 0 para camara predeterminada
 
 
 def iniciar_detector_movimiento():
@@ -53,7 +53,7 @@ def main():
     grabando = False
     grabador = None
     tiempo_inicio_grabacion = None
-    duracion_minima_grabacion = 3  # Duración mínima de la grabación en segundos
+    duracion_minima_grabacion = 3  # Duracion mínima de la grabacion en segundos
 
     while True:
         ret, frame = cap.read()
@@ -66,7 +66,7 @@ def main():
 
         if movimiento_detectado:
             if not grabando:
-                logging.info("Iniciando grabación")
+                logging.info("Iniciando grabacion")
                 nombre_video = time.strftime("%Y%m%d-%H%M%S") + ".avi"
                 ruta_video = os.path.join(carpeta_destino, nombre_video)
                 grabador = iniciar_grabador(ruta_video, frame.shape)
@@ -75,7 +75,7 @@ def main():
         else:
             if grabando:
                 if time.time() - tiempo_inicio_grabacion >= duracion_minima_grabacion:
-                    logging.info("Deteniendo grabación")
+                    logging.info("Deteniendo grabacion")
                     grabador.release()
                     grabando = False
 
